@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="same-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data:; base-uri 'self'; form-action 'self'">
+    <title data-en="Sign in · BookGuest">Iniciar sesión · BookGuest</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha384-EXatlQyrOJgDaM9/a74ArMzy7/2bTMSrZj8ID1IPeVmc3GncfCugefCFWSLj8JL/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/account-orders.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script defer src="js/app.js"></script>
+    <script defer src="js/login.js"></script>
+</head>
+
+<body class="auth page-login">
+    <main class="auth-wrapper" id="contenido">
+        <section class="auth-card">
+            <div class="auth-brand"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i><span>BookGuest</span></div>
+            <h1 class="auth-title" data-en="Sign in">Iniciar sesión</h1>
+            <p class="auth-subtitle" data-en="Sign in with your registered account.">Acceda con su cuenta registrada.</p>
+            <div class="bookguest-notices" aria-live="polite" aria-atomic="true">
+                <div class="interface-notice" id="login-notice" role="alert" hidden>
+                    <div class="interface-notice-header notice-header-error">
+                        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                        <strong>Error</strong>
+                    </div>
+                    <div class="interface-notice-body">
+                        <p></p>
+                        <div class="interface-notice-actions">
+                            <button type="button" data-close-notice data-en="Close">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form action="api/login.php" method="post" id="login-form" data-error="No se pudo conectar. Intente de nuevo." data-error-en="Could not connect. Try again.">
+                <input type="hidden" name="csrf">
+                <div class="auth-field">
+                    <label for="email" class="auth-label" data-en="Email address">Correo electrónico</label>
+                    <input id="email" class="text-control auth-control" type="email" name="email" maxlength="75" autocomplete="email" placeholder="correo@ejemplo.com" required>
+                </div>
+                <div class="auth-field">
+                    <label for="password" class="auth-label" data-en="Password">Contraseña</label>
+                    <div class="password-field">
+                        <input id="password" class="text-control auth-control" type="password" name="password" autocomplete="current-password" placeholder="Ingrese su contraseña" data-placeholder-en="Enter your password" required>
+                        <button type="button" id="btnMostrarPassword" class="password-toggle" aria-controls="password" aria-pressed="false" aria-label="Mostrar contraseña" title="Mostrar contraseña" data-show-label="Mostrar contraseña" data-hide-label="Ocultar contraseña" data-show-label-en="Show password"
+                            data-hide-label-en="Hide password">
+                            <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="auth-alert" id="login-error" role="alert" hidden></p>
+                <button type="submit" class="auth-button" data-en="Sign in" disabled>Iniciar sesión</button>
+            </form>
+            <noscript><p class="auth-alert">Active JavaScript para iniciar sesión.</p></noscript>
+            <div class="auth-links" data-prompt-en="Don’t have an account?">¿No tiene cuenta? <a href="index.php?p=registro" data-en="Create an account">Crear cuenta</a></div>
+        </section>
+    </main>
+</body>
+
+</html>
