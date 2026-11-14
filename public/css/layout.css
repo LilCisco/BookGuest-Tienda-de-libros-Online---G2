@@ -1,0 +1,127 @@
+/* Se carga al final para unificar el desplazamiento del panel y la posición del pie de página. */
+body.admin {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.admin .admin-layout {
+    display: flex;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.admin .admin-sidebar {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    flex-shrink: 0;
+}
+
+.admin .admin-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.admin .admin-topbar {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1010;
+}
+
+/* min-height: 0 permite que este hijo flexible se reduzca y desplace su contenido sin mover la navegación. */
+.admin .admin-content {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable;
+}
+
+.admin [role="dialog"][aria-modal="true"] {
+    overscroll-behavior-y: contain;
+}
+
+/* El área central crece hasta completar la pantalla y deja el footer al final del contenido. */
+body.store {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.store > .client-header,
+.store > .client-footer {
+    flex-shrink: 0;
+}
+
+.store > .client-page {
+    flex: 1 0 auto;
+}
+
+.store > .client-footer {
+    margin-top: auto;
+}
+
+@media (max-width: 992px) {
+    .admin .admin-layout {
+        flex-direction: column;
+    }
+
+    .admin .admin-sidebar {
+        height: auto;
+        padding: 12px 16px;
+    }
+
+    .admin .admin-brand {
+        margin-bottom: 12px;
+    }
+
+    .admin .admin-brand i {
+        font-size: 28px;
+    }
+
+    .admin .admin-menu {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 4px;
+    }
+
+    .admin .admin-menu a {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        min-height: 48px;
+        padding: 7px 2px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .admin .admin-topbar {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    .admin .admin-search {
+        min-width: 0;
+    }
+
+    .admin .admin-top-icons {
+        flex-shrink: 0;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 359px) {
+    .admin .admin-menu a {
+        font-size: 10px;
+    }
+
+    .admin .admin-language {
+        min-width: 88px;
+    }
+}

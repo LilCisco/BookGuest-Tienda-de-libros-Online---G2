@@ -1,0 +1,211 @@
+/* Define la paleta y los componentes compartidos de las pantallas de acceso y confirmación. */
+
+:root {
+    --bookguest-blue: #003F63;
+    --bookguest-button: #1E6BD6;
+    --bookguest-text: #2F333A;
+    --bookguest-muted: #6B7280;
+    --bookguest-border: #D7DCE3;
+    --bookguest-danger: #FF2F2F;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--bookguest-text);
+}
+
+.auth-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.brand-icon {
+    color: var(--bookguest-blue);
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.brand-title {
+    color: var(--bookguest-blue);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+
+.brand-subtitle {
+    color: var(--bookguest-blue);
+    font-size: 23px;
+    line-height: 1.2;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+.form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    width: 360px;
+}
+
+.form-icon {
+    color: var(--bookguest-blue);
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: #2E333B;
+}
+
+.form-subtitle {
+    font-size: 13px;
+    color: var(--bookguest-muted);
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 12px;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.form-control {
+    height: 33px;
+    border-radius: 7px;
+    border: 1px solid var(--bookguest-border);
+    font-size: 13px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.form-control::placeholder {
+    color: #7B8496;
+}
+
+.helper-error {
+    font-size: 12px;
+    color: var(--bookguest-danger);
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+.btn-auth {
+    width: 100%;
+    height: 37px;
+    margin-top: 14px;
+    background-color: var(--bookguest-button);
+    border: 1px solid var(--bookguest-button);
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-auth:hover {
+    color: #FFFFFF;
+    background-color: #195fc0;
+    border-color: #195fc0;
+}
+
+.auth-link-text {
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--bookguest-muted);
+    text-align: center;
+}
+
+.auth-link {
+    color: #0D6EFD;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+.confirmation-layout {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmation-card {
+    width: 360px;
+    margin-top: -40px;
+}
+
+.confirmation-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #2E333B;
+}
+
+.confirmation-text {
+    font-size: 13px;
+    color: var(--bookguest-muted);
+    margin-bottom: 32px;
+    max-width: 330px;
+}
+
+@media (max-width: 768px) {
+    .auth-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-section {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .form-section {
+        padding-bottom: 48px;
+    }
+
+    .brand-icon {
+        font-size: 52px;
+    }
+
+    .brand-title {
+        font-size: 40px;
+    }
+
+    .brand-subtitle {
+        font-size: 20px;
+    }
+
+    .auth-card,
+    .confirmation-card {
+        width: 340px;
+    }
+}

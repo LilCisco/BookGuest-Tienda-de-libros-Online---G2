@@ -1,0 +1,45 @@
+/* Normaliza los elementos HTML antes de aplicar los estilos de cada pantalla. */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    color: #212529;
+    background: #fff;
+    font: 400 1rem/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+p, ul, ol { margin: 0 0 1rem; }
+ul, ol { padding-left: 2rem; }
+small { font-size: .875em; }
+label { display: inline-block; }
+a { color: #0d6efd; text-decoration: underline; }
+a:hover { color: #0a58ca; }
+img, svg { vertical-align: middle; }
+hr { margin: 1rem 0; border: 0; border-top: 1px solid; opacity: .25; }
+
+table { border-collapse: collapse; }
+th { text-align: inherit; }
+
+button, input, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button:not(:disabled) { cursor: pointer; }
+textarea { resize: vertical; }
+
+/* Mantiene la alineación del texto en los campos de fecha de Chromium y Safari. */
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-year-field,
+input[type="date"]::-webkit-datetime-edit-text { padding: 0; }
